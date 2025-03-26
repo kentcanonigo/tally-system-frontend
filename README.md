@@ -16,7 +16,7 @@ If you're only working on UI (JSX, styles), you can **skip Docker** and run Expo
 
 ```sh
 # Clone the repository
-git clone <repo-url>
+git clone https://github.com/kentcanonigo/tally-system-frontend/tree/main
 cd frontend
 
 # Install dependencies
