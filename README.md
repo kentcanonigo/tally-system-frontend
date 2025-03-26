@@ -35,7 +35,7 @@ If you want to match the full development environment (e.g., working with API in
 
 ```sh
 # Clone the repository
-git clone <repo-url>
+git clone https://github.com/kentcanonigo/tally-system-frontend.git
 cd frontend
 
 # Start the frontend with Docker
