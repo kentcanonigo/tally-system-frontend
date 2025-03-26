@@ -1,0 +1,23 @@
+# Use Node.js base image
+FROM node:18
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy package.json and lock files before installing dependencies
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Install Expo CLI and EAS CLI globally
+RUN npm install -g expo-cli eas-cli
+
+# Copy the rest of the project files
+COPY . .
+
+# Expose Expo's default port
+EXPOSE 8081
+
+# Start the Expo development server
+CMD ["npx", "expo", "start"]
