@@ -25,6 +25,8 @@ npm install
 npx expo start
 ```
 
+Use the android virtual device manager to run medium tablet to test changes.
+
 This will generate a QR code. You can scan it using the **Expo Go app** or use an **Android Emulator/iOS Simulator** to preview the app.
 
 ---
