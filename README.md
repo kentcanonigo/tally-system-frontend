@@ -2,6 +2,8 @@
 
 Welcome to the frontend repository! This guide will help you set up your development environment for working on the frontend app.
 
+## NOTE: Right now developing the frontend locally (without docker) is recommended because of the extra steps you need to go through to allow the android emulator to access the docker container. I have not implemented docs for this.
+
 ## 📌 Prerequisites
 Before you start, ensure you have the following installed:
 - [Node.js (LTS)](https://nodejs.org/)
@@ -10,9 +12,6 @@ Before you start, ensure you have the following installed:
 - [Docker (Optional)](https://www.docker.com/)
 
 ## 🚀 Getting Started
-
-### **Option 1: Fastest Way (For UI Changes)**
-If you're only working on UI (JSX, styles), you can **skip Docker** and run Expo directly:
 
 ```sh
 # Clone the repository
@@ -27,35 +26,6 @@ npx expo start
 ```
 
 This will generate a QR code. You can scan it using the **Expo Go app** or use an **Android Emulator/iOS Simulator** to preview the app.
-
----
-
-### **Option 2: Full Setup with Docker (For API Integration & Consistency)**
-If you want to match the full development environment (e.g., working with API integration), you can use Docker:
-
-```sh
-# Clone the repository
-git clone https://github.com/kentcanonigo/tally-system-frontend.git
-cd frontend
-
-# Start the frontend with Docker
-docker-compose up --build
-```
-
-This will:
-✅ Install dependencies inside the container  
-✅ Start the Expo development server  
-✅ Allow API communication with the backend (if needed)
-
-To **restart the frontend server** inside Docker:
-```sh
-docker-compose restart frontend
-```
-
-To **stop everything**:
-```sh
-docker-compose down
-```
 
 ---
 
@@ -76,13 +46,19 @@ EXPO_USE_DEV_SERVER=true npx expo start
 
 ---
 
+## Connecting the backend
+Create a .env file inside the root folder and provide an EXPO_PUBLIC_API_URL entry.
+If running the backend locally, use 10.0.2.2:8081. If running with docker, use your host pc's local ipv4 address with port 8000
+```sh
+EXPO_PUBLIC_API_URL=http://192.168.x.x:8000
+```
+
+---
+
 ## 🔄 Common Development Commands
 | Action | Command |
 |--------|---------|
 | Start Expo Server (without Docker) | `npx expo start` |
-| Start Expo Server (Docker) | `docker-compose up --build` |
-| Restart Expo Server in Docker | `docker-compose restart frontend` |
-| Stop all containers | `docker-compose down` |
 | Install dependencies | `npm install` |
 | Run a development build | `EXPO_USE_DEV_SERVER=true npx expo start` |
 
