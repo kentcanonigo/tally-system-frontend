@@ -1,19 +1,29 @@
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Slot } from 'expo-router';
+import { Tabs } from 'expo-router';
+import { IconSymbol } from '@/components/ui/IconSymbol';
 
-const HomeTabs = createMaterialTopTabNavigator();
-
-export default function HomeTabLayout() {
+export default function TallyTabLayout() {
   return (
-    <HomeTabs.Navigator
+    <Tabs
       screenOptions={{
-        tabBarStyle: { backgroundColor: '#222' },
-        tabBarIndicatorStyle: { backgroundColor: 'white' },
-        tabBarLabelStyle: { fontSize: 14, fontWeight: 'bold' },
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: 'rgba(255, 255, 255, 0.6)',
+        tabBarStyle: { backgroundColor: '#D32976' },
       }}
     >
-      <HomeTabs.Screen name="index" options={{ title: 'Overview' }} children={() => <Slot />} />
-      <HomeTabs.Screen name="details" options={{ title: 'Details' }} children={() => <Slot />} />
-    </HomeTabs.Navigator>
+      <Tabs.Screen
+        name="dc"
+        options={{
+          title: 'Tally DC',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="clipboard-list" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="bp"
+        options={{
+          title: 'Tally BP',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="scale-balance" color={color} />,
+        }}
+      />
+    </Tabs>
   );
 }
