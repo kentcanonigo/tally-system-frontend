@@ -25,7 +25,13 @@ export default function ApiTester() {
   };
 
   return (
-    <View>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <Button title="GET Request" onPress={() => sendRequest('GET')} />
       <Button title="POST Request" onPress={() => sendRequest('POST')} />
       <Button title="PUT Request" onPress={() => sendRequest('PUT')} />
