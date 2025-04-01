@@ -34,7 +34,12 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      "expo-font"
+      [
+        "expo-font",
+        {
+          "fonts": ["./assets/fonts/Inter-VariableFont.ttf"]
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
