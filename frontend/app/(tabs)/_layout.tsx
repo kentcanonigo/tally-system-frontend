@@ -37,37 +37,42 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Tally',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calculate" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calculator" color={color} />,
         }}
       />
       <Tabs.Screen
         name="products"
         options={{
           title: 'Products',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="barn" color={color} />,
         }}
       />
       <Tabs.Screen
         name="allocation"
         options={{
           title: 'Allocation',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="book-multiple-outline" color={color} />,
         }}
       />
       <Tabs.Screen
         name="tally-sheet"
         options={{
           title: 'Tally Sheet',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="google-spreadsheet" color={color} />,
         }}
       />
       <Tabs.Screen
         name="menu"
         options={{
           title: 'Menu',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="menu" color={color} />,
         }}
       />
       <Tabs.Screen
         name="apitester"
         options={{
-          title: 'API Tester',
+          title: 'Tester',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="api" color={color} />,
         }}
       />
     </Tabs>

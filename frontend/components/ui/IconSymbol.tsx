@@ -1,4 +1,4 @@
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import React from 'react';
 import { OpaqueColorValue, StyleProp, ViewStyle } from 'react-native';
 
@@ -18,5 +18,5 @@ export function IconSymbol({
   color: string | OpaqueColorValue;
   style?: StyleProp<ViewStyle>;
 }) {
-  return <MaterialIcons name={name} size={size} color={color} />;
+  return <MaterialCommunityIcons name={name} size={size} color={color} />;
 }
