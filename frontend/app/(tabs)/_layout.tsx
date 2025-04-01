@@ -18,7 +18,9 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
-        headerTitleAlign: 'center',
+        tabBarIconStyle: { display: 'none' },
+        tabBarItemStyle: { justifyContent: 'center' },
+        tabBarLabelStyle: { fontSize: 18, fontWeight: 'bold' },
         tabBarPosition: 'top',
         tabBarStyle: Platform.select({
           ios: {
@@ -32,15 +34,37 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Tally',
+        }}
+      />
+      <Tabs.Screen
+        name="products"
+        options={{
+          title: 'Products',
+        }}
+      />
+      <Tabs.Screen
+        name="allocation"
+        options={{
+          title: 'Allocation',
+        }}
+      />
+      <Tabs.Screen
+        name="tally-sheet"
+        options={{
+          title: 'Tally Sheet',
+        }}
+      />
+      <Tabs.Screen
+        name="menu"
+        options={{
+          title: 'Menu',
         }}
       />
       <Tabs.Screen
         name="apitester"
         options={{
           title: 'API Tester',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />
     </Tabs>
