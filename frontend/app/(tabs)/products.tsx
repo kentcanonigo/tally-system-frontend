@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Link } from 'expo-router';
 import ApiTester from './apitester';
 
-export default function Index() {
+export default function Products() {
   return (
     <View
       style={{
@@ -11,7 +11,7 @@ export default function Index() {
         alignItems: 'center',
       }}
     >
-      <Text>Hello world!</Text>
+      <Text>You are in the products page</Text>
     </View>
   );
 }

@@ -6,6 +6,7 @@ import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { useFonts } from 'expo-font';
+import { IconSymbol } from '@/components/ui/IconSymbol';
 
 export default function TabLayout() {
   const [loaded, error] = useFonts({
@@ -23,14 +24,12 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
-        tabBarIconStyle: { display: 'none' },
         tabBarItemStyle: { justifyContent: 'center' },
-        tabBarLabelStyle: { fontFamily: 'Inter', fontSize: 20, fontWeight: 'bold', justifyContent: 'center' },
+        tabBarLabelStyle: { fontFamily: 'Inter', fontSize: 16, fontWeight: 'bold', justifyContent: 'center' },
         tabBarPosition: 'top',
         tabBarStyle: {
+          justifyContent: 'flex-start',
           backgroundColor: '#D32976',
-          height: 60,
-          paddingHorizontal: 50,
         },
       }}
     >
@@ -38,6 +37,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Tally',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calculate" color={color} />,
         }}
       />
       <Tabs.Screen

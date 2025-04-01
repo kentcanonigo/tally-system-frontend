@@ -11,7 +11,7 @@ export default function Index() {
         alignItems: 'center',
       }}
     >
-      <Text>Hello world!</Text>
+      <Text>You are in the DC-Tally page</Text>
     </View>
   );
 }
