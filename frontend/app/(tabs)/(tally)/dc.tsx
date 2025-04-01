@@ -2,8 +2,14 @@ import { View, Text } from 'react-native';
 
 export default function TallyDC() {
   return (
-    <View>
-      <Text>Tally DC Screen</Text>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Text>You are in the DC Tally page</Text>
     </View>
   );
 }

@@ -7,7 +7,11 @@ export default function TallyTabLayout() {
       screenOptions={{
         tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: 'rgba(255, 255, 255, 0.6)',
+        tabBarActiveBackgroundColor: 'rgba(255, 255, 255, 0.1)',
+        tabBarLabelStyle: { fontFamily: 'Inter', fontSize: 16, fontWeight: 'bold', justifyContent: 'center' },
         tabBarStyle: { backgroundColor: '#D32976' },
+        tabBarPosition: 'top',
+        headerShown: false,
       }}
     >
       <Tabs.Screen
