@@ -2,7 +2,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import React from 'react';
 import { OpaqueColorValue, StyleProp, ViewStyle } from 'react-native';
 
-export type IconSymbolName = React.ComponentProps<typeof MaterialIcons>['name'];
+export type IconSymbolName = React.ComponentProps<typeof MaterialCommunityIcons>['name'];
 
 /**
  * A simple Material Icons wrapper to maintain consistency across the app.
