@@ -1,17 +1,5 @@
-import { Text, View, StyleSheet, Pressable } from 'react-native';
-import { Link } from 'expo-router';
-import ApiTester from './apitester';
+import { Redirect } from 'expo-router';
 
 export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <Text>You are in the DC-Tally page</Text>
-    </View>
-  );
+  return <Redirect href="/(tabs)/(tally)/dc" />;
 }

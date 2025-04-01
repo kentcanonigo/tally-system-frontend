@@ -1,6 +1,5 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
 import { HapticTab } from '@/components/HapticTab';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
@@ -34,7 +33,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="(tally)"
         options={{
           title: 'Tally',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="calculator" color={color} />,
@@ -75,6 +74,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="api" color={color} />,
         }}
       />
+      <Tabs.Screen name="index" options={{ href: null }} />
     </Tabs>
   );
 }
