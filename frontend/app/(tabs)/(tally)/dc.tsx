@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableNativeFeedback, TouchableOpacity, FlatList } from 'react-native';
 
 const data = [
-  { id: 1, Allocated: 0, class: 'OSS', Bags: 0, Heads: 0, Kgs: 0 },
+  { id: 1, Allocated: 0, class: 'OS', Bags: 0, Heads: 0, Kgs: 0 },
   { id: 2, Allocated: 0, class: 'P4', Bags: 0, Heads: 0, Kgs: 0 },
   { id: 3, Allocated: 0, class: 'P3', Bags: 0, Heads: 0, Kgs: 0 },
   { id: 4, Allocated: 0, class: 'P2', Bags: 0, Heads: 0, Kgs: 0 },
