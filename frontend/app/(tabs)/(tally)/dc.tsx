@@ -1,24 +1,127 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableNativeFeedback, TouchableOpacity, FlatList } from 'react-native';
+import { RFValue } from "react-native-responsive-fontsize";
+import DropDownPicker from 'react-native-dropdown-picker';
 
-const data = [
-  { id: 1, Allocated: 0, class: 'OS', Bags: 0, Heads: 0, Kgs: 0 },
-  { id: 2, Allocated: 0, class: 'P4', Bags: 0, Heads: 0, Kgs: 0 },
-  { id: 3, Allocated: 0, class: 'P3', Bags: 0, Heads: 0, Kgs: 0 },
-  { id: 4, Allocated: 0, class: 'P2', Bags: 0, Heads: 0, Kgs: 0 },
-  { id: 5, Allocated: 0, class: 'P1', Bags: 0, Heads: 0, Kgs: 0 },
-  { id: 6, Allocated: 0, class: 'US', Bags: 0, Heads: 0, Kgs: 0 },
-  { id: 7, Allocated: 0, class: 'SQ', Bags: 0, Heads: 0, Kgs: 0 },
-  { id: 8, Allocated: 0, class: 'CB', Bags: 0, Heads: 0, Kgs: 0 },
-  { id: 9, Allocated: 0, class: 'Total', Bags: 0, Heads: 0, Kgs: 0 },
-];
+
 
 export default function TallyDC() {
+
+  const Tallier = () => {
+
+    const initialData = [
+      { id: 1, Allocated: 0, class: 'OS', Bags: 0, Heads: 0, Kgs: 0 },
+      { id: 2, Allocated: 0, class: 'P4', Bags: 0, Heads: 0, Kgs: 0 },
+      { id: 3, Allocated: 0, class: 'P3', Bags: 0, Heads: 0, Kgs: 0 },
+      { id: 4, Allocated: 0, class: 'P2', Bags: 0, Heads: 0, Kgs: 0 },
+      { id: 5, Allocated: 0, class: 'P1', Bags: 0, Heads: 0, Kgs: 0 },
+      { id: 6, Allocated: 0, class: 'US', Bags: 0, Heads: 0, Kgs: 0 },
+      { id: 7, Allocated: 0, class: 'SQ', Bags: 0, Heads: 0, Kgs: 0 },
+      { id: 8, Allocated: 0, class: 'CB', Bags: 0, Heads: 0, Kgs: 0 },
+      { id: 9, Allocated: 0, class: 'Total', Bags: 0, Heads: 0, Kgs: 0 },
+    ];
+
+    const [data, setData] = useState(initialData);
+    const [heads, setHeads] = useState('15');
+    const [kgs, setKgs] = useState('0');
+    const [activeInput, setActiveInput] = useState<'heads' | 'kgs'>('kgs');
+
+    const [open, setOpen] = useState(false);
+    const firstClass = data.filter(item => item.class !== 'Total')[0].class;
+    const [dcclass, setDcClass] = useState<string>(firstClass);
+
+    const handleKeyPress = (key: string) => {
+      const currentValue = activeInput === 'heads' ? heads : kgs;
+      const setter = activeInput === 'heads' ? setHeads : setKgs;
+    
+      let newValue = currentValue;
+    
+      if (key === '<-') {
+        // Handle backspace for both inputs
+        newValue = currentValue.slice(0, -1);
+        if (newValue === '') {
+          newValue = activeInput === 'heads' ? '15' : '0';
+        }
+      } else if (activeInput === 'heads') {
+        
+        newValue = currentValue === '15' ? key : currentValue + key;
+      } else {
+
+        if (key === '.') {
+          if (!currentValue.includes('.')) {
+            newValue = currentValue === '0' ? '0.' : currentValue + '.';
+          }
+        } else {
+          if (currentValue === '0') {
+            newValue = key;
+          } else {
+            const parts = currentValue.split('.');
+            if (parts.length < 2 || parts[1].length < 2) {
+              newValue = currentValue + key;
+            }
+          }
+        }
+      }
+    
+      setter(newValue);
+    };
+    
+    const handleClear = () => {
+      activeInput === 'heads' ? setHeads('15') : setKgs('0');
+    };
+
+    const handleEnter = () => {
+
+      if (!dcclass || 
+        !heads.trim() || 
+        !kgs.trim() || 
+        parseInt(heads) <= 0 || 
+        parseFloat(kgs) <= 0
+    ) {
+      return; 
+    }
+
+      const headsValue = parseInt(heads, 10) || 0;
+      const kgsValue = parseFloat(kgs).toFixed(2);
+      
+
+      setData(prevData => {
+        const newData = prevData.map(item => ({ ...item }));
+        
+        // Update selected row
+        const selectedRow = newData.find(item => item.class === dcclass);
+        if (selectedRow) {
+          selectedRow.Bags += 1;
+          selectedRow.Heads += headsValue;
+          selectedRow.Kgs += parseFloat(kgsValue);
+        }
+
+        const totalRow = newData.find(item => item.class === 'Total');
+        if (totalRow) {
+          totalRow.Bags = newData
+            .filter(item => item.class !== 'Total')
+            .reduce((sum, item) => sum + item.Bags, 0);
+            
+          totalRow.Heads = newData
+            .filter(item => item.class !== 'Total')
+            .reduce((sum, item) => sum + item.Heads, 0);
+            
+          totalRow.Kgs = newData
+            .filter(item => item.class !== 'Total')
+            .reduce((sum, item) => sum + item.Kgs, 0);
+        }
+
+        return newData;
+      });
+       setHeads('15');
+       setKgs('0');
+    };
+  
   return (
     <View style={styles.DC_container}>
       <View style={styles.Display_container}>
         <View style={styles.CustomerInputContainer}>
-          <Text style={styles.CurrentCustomerText}>Current Customer</Text>
+          <Text style={[styles.CurrentCustomerText]}>Current Customer</Text>
           <View style={styles.Name_RefreshContainer}>
             <TextInput style={styles.Customer_TextInput}></TextInput>
             <View style={styles.Refresh}>
@@ -28,31 +131,44 @@ export default function TallyDC() {
         </View>
 
         <View style={styles.TableContainer}>
-          <View style={styles.Header}>
-            <Text style={styles.Heading1}>ALLOCATED BAGS</Text>
-            <Text style={styles.Heading}>CLASS</Text>
-            <Text style={styles.Heading}>BAGS</Text>
-            <Text style={styles.Heading2}>HEADS</Text>
-            <Text style={styles.Heading2}>KGS</Text>
-          </View>
 
-          <FlatList
-            data={data}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item, index }) => {
-              const isLastRow = index === data.length - 1;
-              return (
-                <View style={styles.CustomerTable}>
-                  <Text style={[styles.cellYellow, isLastRow && styles.cellGreen]}>{item.Allocated}</Text>
-                  <Text style={[styles.cellPink, isLastRow && styles.cellGreen]}>{item.class}</Text>
-                  <Text style={[styles.cellPink, isLastRow && styles.cellGreen]}>{item.Bags}</Text>
-                  <Text style={[styles.cellPink1, isLastRow && styles.cellGreen1]}>{item.Heads}</Text>
-                  <Text style={[styles.cellPink1, isLastRow && styles.cellGreen1]}>{item.Kgs}</Text>
-                </View>
-              );
-            }}
-          />
-        </View>
+  {/* Header Section */}
+  <View style={styles.Header}>
+    <Text style={[styles.Heading1, styles.HeadingText]}>ALLOCATED BAGS</Text>
+    <Text style={[styles.Heading, styles.HeadingText]}>CLASS</Text>
+    <Text style={[styles.Heading, styles.HeadingText]}>BAGS</Text>
+    <Text style={[styles.Heading2, styles.HeadingText]}>HEADS</Text>
+    <Text style={[styles.Heading2, styles.HeadingText]}>KGS</Text>
+  </View>
+
+   {/* Table Rows Section */}
+   <FlatList
+     data={data}
+     keyExtractor={(item) => item.id.toString()}
+     renderItem={({ item, index }) => {
+       const isLastRow = index === data.length - 1;
+       return (
+         <View style={styles.CustomerTable}>
+           <Text style={[styles.cellYellow, styles.cellText, isLastRow && styles.cellGreen]}>
+              {item.Allocated}
+            </Text>
+           <Text style={[styles.cellPink, styles.cellText, isLastRow && styles.cellGreen]}>
+              {item.class}
+           </Text>
+           <Text style={[styles.cellPink, styles.cellText, isLastRow && styles.cellGreen]}>
+             {item.Bags}
+           </Text>
+           <Text style={[styles.cellPink1, styles.cellText, isLastRow && styles.cellGreen1]}>
+             {item.Heads}
+           </Text>
+           <Text style={[styles.cellPink1, styles.cellText, isLastRow && styles.cellGreen1]}>
+             {item.Kgs.toFixed(2)}
+           </Text>
+         </View>
+       );
+      }}
+    />
+  </View>
 
         <View style={styles.RecapTransferContainer}>
           <TouchableNativeFeedback style={styles.Recap}>
@@ -74,12 +190,41 @@ export default function TallyDC() {
         <Text style={styles.TallierText}>TALLIER</Text>
 
         <View style={styles.TallierInputContainer}>
-          <TextInput style={styles.Tallier_TextInput}>OS</TextInput>
-          <TextInput style={styles.Tallier_TextInput}>15</TextInput>
-          <TextInput style={styles.Tallier_TextInput}>0</TextInput>
+            <View style={styles.Tallier_TextInput}>
+              <DropDownPicker
+                open={open}
+                value={dcclass}
+                items={data
+                  .filter((item) => item.class !== 'Total') // Remove "Total"
+                  .map((item) => ({
+                   label: item.class,
+                    value: item.class,
+                  }))
+                }
+                setOpen={setOpen}
+                setValue={setDcClass}
+                style={styles.DDStyle}
+                textStyle={styles.DDText}
+                listItemLabelStyle={styles.DDItemLabel}
+                dropDownContainerStyle={styles.DDContainer}
+                
+             />
+           </View>
+        <TextInput 
+            style={styles.Tallier_TextInput} 
+            value={heads}
+            onPressIn={() => setActiveInput('heads')}
+            showSoftInputOnFocus={false}
+          />
+          <TextInput 
+            style={styles.Tallier_TextInput} 
+            value={kgs}
+            onPressIn={() => setActiveInput('kgs')}
+            showSoftInputOnFocus={false}
+          />
         </View>
 
-        <TouchableNativeFeedback onPress={() => console.log('Clear')}>
+        <TouchableNativeFeedback onPress={handleClear}>
           <View style={styles.TallierClear}>
             <Text style={styles.TallierButtonText}>CLEAR</Text>
           </View>
@@ -97,7 +242,7 @@ export default function TallyDC() {
                 <TouchableOpacity
                   key={key}
                   style={styles.button}
-                  onPress={() => console.log(key === '<-' ? 'back' : key)}
+                  onPress={() =>  handleKeyPress(key === '<-' ? '<-' : key)}
                 >
                   <Text style={styles.buttonText}>{key}</Text>
                 </TouchableOpacity>
@@ -106,7 +251,7 @@ export default function TallyDC() {
           ))}
         </View>
 
-        <TouchableNativeFeedback onPress={() => console.log('Enter')}>
+        <TouchableNativeFeedback onPress={handleEnter}>
           <View style={styles.TallierEnter}>
             <Text style={styles.TallierButtonText}>ENTER</Text>
           </View>
@@ -114,9 +259,39 @@ export default function TallyDC() {
       </View>
     </View>
   );
+};
+return <Tallier />;
 }
 
+const baseStyles = StyleSheet.create({
+
+    baseText: {
+      fontFamily: 'Inter',
+      fontWeight: '700',
+    },
+
+  buttonBase: {
+    borderRadius: 10,
+    margin: 5,
+    padding:10,
+  },
+
+  inputBase: {
+    backgroundColor: 'white',
+    borderRadius: 5,
+    borderColor: '#000',
+    borderWidth: 1,
+  },
+
+  rowContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+});
+
+
 const styles = StyleSheet.create({
+
   DC_container: {
     flex: 1,
     flexDirection: 'row',
@@ -137,6 +312,7 @@ const styles = StyleSheet.create({
   CustomerInputContainer: {
     width: '90%',
     flexDirection: 'column',
+    marginBottom:5,
   },
 
   Name_RefreshContainer: {
@@ -147,15 +323,12 @@ const styles = StyleSheet.create({
   },
 
   CurrentCustomerText: {
-    fontSize: 15,
-    fontFamily: 'Inter',
-    fontWeight: 700,
     paddingBottom: 5,
+    ...baseStyles.baseText
   },
 
   Refresh: {
     height: '100%',
-    width: '10%',
     flexDirection: 'column',
     backgroundColor: 'grey',
     marginLeft: 10,
@@ -163,101 +336,89 @@ const styles = StyleSheet.create({
 
   Customer_TextInput: {
     width: '95%',
-    fontSize: 15,
-    fontFamily: 'Inter',
-    backgroundColor: 'white',
-    borderRadius: 5,
-    borderColor: '#000',
-    borderWidth: 1,
+    fontSize: 15,  
+    ...baseStyles.inputBase,
+    ...baseStyles.baseText,
   },
 
   TableContainer: {
-    height: '76%',
     width: '97%',
     borderColor: 'black',
     borderWidth: 1,
     borderRadius: 10,
-    padding: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,  
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
   },
-
+  
   Header: {
-    height: '10%',
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
+    marginBottom: 5,  
+  },
+  
+  Heading: {
+    width: '15%',
+  },
+  
+  Heading2: {
+    width: '20%',
+  },
+  
+  Heading1: {
+    width: '15%',
+    color: '#D32976',
+  },
+  
+  HeadingText: {
+    fontSize: RFValue(8),  
+    textAlign: 'center',
+    marginVertical:10,
+    ...baseStyles.baseText,
+  },
+  
+  CustomerTable: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-  },
-
-  Heading: {
-    width: '15%',
+    marginVertical: 5,  
+    width: '100%',
     textAlign: 'center',
-    fontWeight: 700,
   },
-
-  Heading2: {
-    width: '20%',
-    textAlign: 'center',
-    fontWeight: 700,
-  },
-
-  Heading1: {
-    width: '15%',
-    fontSize: 12,
-    textAlign: 'center',
-    color: '#D32976',
-    fontWeight: 700,
-  },
-
-  CustomerTable: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 5,
-    height: 24,
-  },
-
+  
   cellYellow: {
     width: '15%',
-    textAlign: 'center',
     backgroundColor: '#FBF77F',
-    borderRadius: 5,
-    fontSize: 15,
-    fontWeight: 700,
   },
-
+  
   cellPink: {
     width: '15%',
-    textAlign: 'center',
     backgroundColor: '#F6CEE4',
-    borderRadius: 5,
-    fontSize: 15,
-    fontWeight: 700,
   },
-
+  
   cellPink1: {
     width: '20%',
-    textAlign: 'center',
     backgroundColor: '#F6CEE4',
-    borderRadius: 5,
-    fontSize: 15,
-    fontWeight: 700,
   },
-
+  
   cellGreen: {
     width: '15%',
-    textAlign: 'center',
     backgroundColor: '#AFFB7F',
-    borderRadius: 5,
-    fontSize: 15,
-    fontWeight: 700,
   },
-
+  
   cellGreen1: {
     width: '20%',
-    textAlign: 'center',
     backgroundColor: '#AFFB7F',
+  },
+  
+  cellText: {
+    textAlign: 'center',
+    fontSize: RFValue(17), 
+    ...baseStyles.baseText,
     borderRadius: 5,
-    fontSize: 15,
-    fontWeight: 700,
   },
 
   RecapTransferContainer: {
@@ -268,26 +429,22 @@ const styles = StyleSheet.create({
 
   Recap: {
     backgroundColor: '#2951D3',
-    borderRadius: 10,
-    padding: 10,
+    ...baseStyles.buttonBase,
     paddingHorizontal: 15,
-    margin: 5,
+    
   },
 
   Transfer: {
     backgroundColor: '#D3292C',
-    borderRadius: 10,
-    padding: 10,
+    ...baseStyles.buttonBase,
     paddingHorizontal: 25,
-    margin: 5,
   },
 
   RecapTransferButtonText: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 12,
-    fontFamily: 'Inter',
-    fontWeight: 700,
+    fontSize: RFValue(9),
+    ...baseStyles.baseText
   },
 
   /* Tallier Encoder Part(Calculator like)*/
@@ -303,10 +460,9 @@ const styles = StyleSheet.create({
     height: '10%',
     width: '100%',
     alignSelf: 'flex-start',
-    fontSize: 27,
-    fontFamily: 'Inter',
-    fontWeight: 700,
+    fontSize: RFValue(20),
     fontStyle: 'italic',
+    ...baseStyles.baseText,
   },
 
   TallierInputContainer: {
@@ -321,38 +477,34 @@ const styles = StyleSheet.create({
 
   Tallier_TextInput: {
     width: '25%',
-    fontSize: 32,
-    fontFamily: 'Inter',
-    fontWeight: 700,
+    fontSize: RFValue(25),
     fontStyle: 'italic',
     backgroundColor: 'white',
     textAlign: 'center',
-    borderRadius: 5,
+    borderRadius: 10,
     borderColor: '#000',
     borderWidth: 2,
+    ...baseStyles.baseText
   },
 
   TallierClear: {
     width: '95%',
     backgroundColor: '#D3292C',
-    borderRadius: 10,
-    margin: 5,
+    ...baseStyles.buttonBase,
   },
 
   TallierEnter: {
     width: '95%',
     backgroundColor: '#45D329',
-    borderRadius: 10,
-    margin: 5,
+    ...baseStyles.buttonBase,
   },
 
   TallierButtonText: {
     color: '#fff',
     textAlign: 'center',
-    fontSize: 18,
-    fontFamily: 'Inter',
-    fontWeight: 500,
+    fontSize: RFValue(10),
     padding: 5,
+    ...baseStyles.baseText
   },
 
   keypad: {
@@ -374,9 +526,32 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    fontSize: 40,
+    fontSize: RFValue(30),
     color: 'black',
-    fontWeight: 'bold',
-    fontFamily: 'Inter',
+    ...baseStyles.baseText
   },
+
+  /*For DropDown */
+
+  DDStyle:{
+    borderWidth: 0,
+   backgroundColor: 'transparent',
+  },
+
+  DDText:{
+   fontSize: RFValue(25),        
+   fontStyle: 'italic',
+   textAlign: 'center',
+  fontWeight: '700',
+  padding:5,
+  },
+ DDItemLabel:{
+  fontSize: RFValue(13),      
+  fontWeight: '700',  
+  },
+  DDContainer:{
+    borderColor: '#000',
+    borderWidth: 1,
+  },
+
 });
