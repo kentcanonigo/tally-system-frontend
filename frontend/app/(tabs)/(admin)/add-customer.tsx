@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Link } from 'expo-router';
 import ApiTester from './apitester';
 
-export default function Menu() {
+export default function AddCustomer() {
   return (
     <View
       style={{
@@ -11,7 +11,7 @@ export default function Menu() {
         alignItems: 'center',
       }}
     >
-      <Text>You are in the menu page</Text>
+      <Text>You are in the Add Customer Page</Text>
     </View>
   );
 }
