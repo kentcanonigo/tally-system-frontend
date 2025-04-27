@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cfe2aa7-64e6-4bc2-8174-9dc421ea48ec" name="Changes" comment="fixed routing, no secure-store yet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/user/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/user/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Collapsible.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ExternalLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ExternalLink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ParallaxScrollView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ParallaxScrollView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+    <list default="true" id="5cfe2aa7-64e6-4bc2-8174-9dc421ea48ec" name="Changes" comment="try securestore">
+      <change beforePath="$PROJECT_DIR$/frontend/android/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/java/com/kentdev/tallysystem/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/java/com/kentdev/tallysystem/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/java/com/kentdev/tallysystem/MainApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/java/com/kentdev/tallysystem/MainApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/res/drawable/rn_edit_text_material.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/res/drawable/rn_edit_text_material.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,27 +81,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "admin__user__fixed__routing",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Repositories/tally-system-frontend/frontend/app/admin",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "D:\\Repositories\\tally-system-frontend\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;admin__user__fixed__routing&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Repositories/tally-system-frontend/frontend/app/admin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Repositories\\tally-system-frontend\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Repositories\tally-system-frontend\frontend\app\admin" />
@@ -120,6 +134,7 @@
       <updated>1745672458577</updated>
       <workItem from="1745672461305" duration="2200000" />
       <workItem from="1745731950543" duration="9967000" />
+      <workItem from="1745742059111" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="intellij idea files">
       <option name="closed" value="true" />
@@ -137,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745740936891</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="try securestore">
+      <option name="closed" value="true" />
+      <created>1745742375784</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745742375784</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +180,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="intellij idea files" />
     <MESSAGE value="fixed routing, no secure-store yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed routing, no secure-store yet" />
+    <MESSAGE value="try securestore" />
+    <option name="LAST_COMMIT_MESSAGE" value="try securestore" />
   </component>
 </project>

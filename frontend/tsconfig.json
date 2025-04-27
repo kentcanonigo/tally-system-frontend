@@ -9,5 +9,6 @@
     "noImplicitAny": false, // Allows 'any' types, which can apply to strings
     "strictNullChecks": false, // Allows 'null' and 'undefined' to be assigned to strings
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
+  "exclude": ["node_modules"]
 }
