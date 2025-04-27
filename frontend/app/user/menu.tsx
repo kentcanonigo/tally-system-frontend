@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, Pressable, Button } from "react-native";
-import { Link, router } from "expo-router";
+import {Link, RelativePathString, router} from "expo-router";
 import ApiTester from "./apitester";
 
 export default function Menu() {
@@ -11,7 +11,7 @@ export default function Menu() {
         alignItems: "center",
       }}
     >
-      <Button title="Back to Home" onPress={() => router.replace("/")} />
+      <Button title="Back to Home" onPress={() => router.replace("/" as RelativePathString)} />
     </View>
   );
 }

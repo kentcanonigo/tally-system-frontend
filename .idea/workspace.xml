@@ -4,63 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cfe2aa7-64e6-4bc2-8174-9dc421ea48ec" name="Changes" comment="intellij idea files">
-      <change afterPath="$PROJECT_DIR$/frontend/__mocks__/expo-secure-store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin/add-customer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin/admin-dashboard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin/category-setter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin/customer-allocation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin/menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin/user-logs.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/auth/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/user/(tally)/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/user/(tally)/bp.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/user/(tally)/dc.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/user/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/user/allocation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/user/menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/user/products.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/user/tally-sheet.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(auth)/_layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(admin)/_layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(admin)/add-customer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(admin)/admin-dashboard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(admin)/apitester.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/admin/apitester.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(admin)/category-setter.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(admin)/customer-allocation.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(admin)/menu.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(admin)/user-logs.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/(tally)/_layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/(tally)/bp.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/(tally)/dc.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/_layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/allocation.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/apitester.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/user/apitester.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/menu.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/products.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/(tabs)/(user)/tally-sheet.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/+not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/+not-found.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/_layout.tsx" afterDir="false" />
+    <list default="true" id="5cfe2aa7-64e6-4bc2-8174-9dc421ea48ec" name="Changes" comment="fixed routing, no secure-store yet">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/user/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/user/menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Collapsible.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/ExternalLink.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ExternalLink.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/HapticTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/HapticTab.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/HelloWave.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/HelloWave.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/ParallaxScrollView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ParallaxScrollView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ThemedText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ThemedText.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ThemedView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ThemedView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ui/IconSymbol.ios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ui/IconSymbol.ios.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ui/IconSymbol.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ui/IconSymbol.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ui/TabBarBackground.ios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ui/TabBarBackground.ios.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/ui/TabBarBackground.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/ui/TabBarBackground.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/constants/Colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/constants/Colors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/hooks/useColorScheme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/hooks/useColorScheme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/hooks/useColorScheme.web.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/hooks/useColorScheme.web.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/hooks/useThemeColor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/hooks/useThemeColor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +54,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -170,7 +119,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745672458577</updated>
       <workItem from="1745672461305" duration="2200000" />
-      <workItem from="1745731950543" duration="8718000" />
+      <workItem from="1745731950543" duration="9967000" />
     </task>
     <task id="LOCAL-00001" summary="intellij idea files">
       <option name="closed" value="true" />
@@ -180,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745672768550</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed routing, no secure-store yet">
+      <option name="closed" value="true" />
+      <created>1745740936891</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745740936891</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +156,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="intellij idea files" />
-    <option name="LAST_COMMIT_MESSAGE" value="intellij idea files" />
+    <MESSAGE value="fixed routing, no secure-store yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed routing, no secure-store yet" />
   </component>
 </project>

@@ -2,14 +2,14 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import {RelativePathString, useRouter} from 'expo-router';
+import * as SecureStore from 'expo-secure-store';
 
 export default function AuthScreen() {
     const router = useRouter();
 
-    const handleSelect = (type: 'admin' | 'user') => {
-        // Remove SecureStore temporarily
-        console.log(`Navigating to /${type}`);
-        router.replace(`/${type}` as RelativePathString);
+    const handleSelect = async (type: 'admin' | 'user') => {
+        await SecureStore.setItemAsync('userType', type);
+        router.replace(`/${type}` as RelativePathString); // This is 100% fine
     };
 
 
