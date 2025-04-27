@@ -44,3 +44,6 @@ app-example
 
 # Docker-related files
 docker-compose.override.yml
+
+# Idea
+/.idea

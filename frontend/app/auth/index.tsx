@@ -1,8 +1,7 @@
 // app/auth/index.tsx
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import {RelativePathString, useRouter} from 'expo-router';
-//import * as SecureStore from 'expo-secure-store';
+import {useRouter} from 'expo-router';
 
 export default function AuthScreen() {
     const router = useRouter();
