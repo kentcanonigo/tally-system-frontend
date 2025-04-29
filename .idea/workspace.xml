@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cfe2aa7-64e6-4bc2-8174-9dc421ea48ec" name="Changes" comment="update">
+    <list default="true" id="5cfe2aa7-64e6-4bc2-8174-9dc421ea48ec" name="Changes" comment="add log statements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="admin_user" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "automatic__tally",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Repositories/tally-system-frontend/frontend/app/admin",
     "node.js.detected.package.eslint": "true",
@@ -79,7 +79,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.externalTools",
+    "settings.editor.selected.configurable": "configurable.group.appearance",
     "ts.external.directory.path": "D:\\Repositories\\tally-system-frontend\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -126,7 +126,8 @@
       <workItem from="1745672461305" duration="2200000" />
       <workItem from="1745731950543" duration="9967000" />
       <workItem from="1745742059111" duration="7155000" />
-      <workItem from="1745891429947" duration="2453000" />
+      <workItem from="1745891429947" duration="3040000" />
+      <workItem from="1745894540378" duration="334000" />
     </task>
     <task id="LOCAL-00001" summary="intellij idea files">
       <option name="closed" value="true" />
@@ -176,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745743953285</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add log statements">
+      <option name="closed" value="true" />
+      <created>1745894250683</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745894250683</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +209,7 @@
     <MESSAGE value="ran npx expo prebuild --clean, also adjusted typescript to not report errors in node_modules" />
     <MESSAGE value="remove securestore temporarily" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="add log statements" />
+    <option name="LAST_COMMIT_MESSAGE" value="add log statements" />
   </component>
 </project>
