@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cfe2aa7-64e6-4bc2-8174-9dc421ea48ec" name="Changes" comment="remove securestore temporarily">
+    <list default="true" id="5cfe2aa7-64e6-4bc2-8174-9dc421ea48ec" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/auth/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/auth/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "com.codeium.enabled": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Repositories/tally-system-frontend/frontend/app/admin",
@@ -80,11 +79,20 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "preferences.externalTools",
     "ts.external.directory.path": "D:\\Repositories\\tally-system-frontend\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Repositories\tally-system-frontend\frontend\app\admin" />
@@ -117,7 +125,8 @@
       <updated>1745672458577</updated>
       <workItem from="1745672461305" duration="2200000" />
       <workItem from="1745731950543" duration="9967000" />
-      <workItem from="1745742059111" duration="1617000" />
+      <workItem from="1745742059111" duration="7155000" />
+      <workItem from="1745891429947" duration="2453000" />
     </task>
     <task id="LOCAL-00001" summary="intellij idea files">
       <option name="closed" value="true" />
@@ -159,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745742928000</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <option name="closed" value="true" />
+      <created>1745743953285</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745743953285</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +199,7 @@
     <MESSAGE value="try securestore" />
     <MESSAGE value="ran npx expo prebuild --clean, also adjusted typescript to not report errors in node_modules" />
     <MESSAGE value="remove securestore temporarily" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove securestore temporarily" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
